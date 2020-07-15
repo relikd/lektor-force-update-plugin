@@ -26,9 +26,6 @@ setup(
     py_modules=['lektor_force_update'],
     url='https://github.com/relikd/lektor-force-update-plugin',
     version='1.0',
-    install_requires=[
-        'Lektor',
-    ],
     classifiers=[
         'Framework :: Lektor',
         'Environment :: Plugins',
