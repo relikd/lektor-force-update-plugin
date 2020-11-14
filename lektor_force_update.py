@@ -26,12 +26,12 @@ configs/force-update.ini:
             return False
         return any(path.endswith(x) for x in self.patterns)
 
-    def on_after_build(self, builder, build_state, source, prog):
+    def on_after_build(self, builder, build_state, source, prog, **extra):
         if self.enabled and self.matchesPattern(source):
             for artifact in prog.artifacts:
                 artifact.set_dirty_flag()
 
-    def on_setup_env(self):
+    def on_setup_env(self, **extra):
         prefs = self.get_config()
         endswith = prefs.get('endswith')
         if endswith is None:
